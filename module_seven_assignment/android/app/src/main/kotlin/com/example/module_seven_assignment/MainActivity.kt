@@ -1,4 +1,4 @@
-package com.example.module_seven_assignment_new
+package com.example.module_seven_assignment
 
 import io.flutter.embedding.android.FlutterActivity
 
