@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<module type="JAVA_MODULE" version="4">
+  <component name="NewModuleRootManager" inherit-compiler-output="true">
+    <exclude-output />
+    <content url="file://$MODULE_DIR$">
+      <excludeFolder url="file://$MODULE_DIR$/class_practices/build" />
+      <excludeFolder url="file://$MODULE_DIR$/class_practices/.pub" />
+      <excludeFolder url="file://$MODULE_DIR$/class_practices/.dart_tool" />
+      <excludeFolder url="file://$MODULE_DIR$/module_seven_assignment/build" />
+      <excludeFolder url="file://$MODULE_DIR$/module_seven_assignment/.dart_tool" />
+      <excludeFolder url="file://$MODULE_DIR$/module_seven_assignment/.pub" />
+      <excludeFolder url="file://$MODULE_DIR$/module_six_assignment/build" />
+      <excludeFolder url="file://$MODULE_DIR$/module_six_assignment/.pub" />
+      <excludeFolder url="file://$MODULE_DIR$/module_six_assignment/.dart_tool" />
+      <excludeFolder url="file://$MODULE_DIR$/module_five_assignment/.dart_tool" />
+      <excludeFolder url="file://$MODULE_DIR$/module_five_assignment/.pub" />
+      <excludeFolder url="file://$MODULE_DIR$/module_five_assignment/build" />
+      <excludeFolder url="file://$MODULE_DIR$/module_seven_live_test/.pub" />
+      <excludeFolder url="file://$MODULE_DIR$/module_seven_live_test/.dart_tool" />
+      <excludeFolder url="file://$MODULE_DIR$/module_seven_live_test/build" />
+      <excludeFolder url="file://$MODULE_DIR$/module_eight_assignment/.pub" />
+      <excludeFolder url="file://$MODULE_DIR$/module_eight_assignment/build" />
+      <excludeFolder url="file://$MODULE_DIR$/module_eight_assignment/.dart_tool" />
+    </content>
+    <orderEntry type="inheritedJdk" />
+    <orderEntry type="sourceFolder" forTests="false" />
+  </component>
+</module>
