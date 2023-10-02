@@ -1,5 +1,3 @@
-import 'package:flutter/material.dart';
-
 class DartBook {
   String title;
   String description;
@@ -72,39 +70,95 @@ List<DartBook> chaptarList = [
       description:
           "Lorem Ipsum has been the industrys standard dummy text ever since the 1500s"),
   DartBook(
-      title: 'Lorem Ipsum has been',
+      title: 'if স্টেটমেন্ট (if Statement)',
       description:
           "Lorem Ipsum has been the industrys standard dummy text ever since the 1500s"),
   DartBook(
-      title: 'Lorem Ipsum has been',
+      title: 'if-else স্টেটমেন্ট (if-else Statement)',
       description:
           "Lorem Ipsum has been the industrys standard dummy text ever since the 1500s"),
   DartBook(
-      title: 'Lorem Ipsum has been',
+      title: 'if-else-if স্টেটমেন্ট (if-else-if Statement)',
       description:
           "Lorem Ipsum has been the industrys standard dummy text ever since the 1500s"),
   DartBook(
-      title: 'Lorem Ipsum has been',
+      title: 'সুইচ কেস স্টেটমেন্ট (Switch Case Statement)',
       description:
           "Lorem Ipsum has been the industrys standard dummy text ever since the 1500s"),
   DartBook(
-      title: 'Lorem Ipsum has been',
+      title: 'লুপ (Loops)',
       description:
           "Lorem Ipsum has been the industrys standard dummy text ever since the 1500s"),
   DartBook(
-      title: 'Lorem Ipsum has been',
+      title: 'ফর লুপ (For Loop)',
       description:
           "Lorem Ipsum has been the industrys standard dummy text ever since the 1500s"),
   DartBook(
-      title: 'Lorem Ipsum has been',
+      title: 'ফর-ইন লুপ (For-in Loop)',
       description:
           "Lorem Ipsum has been the industrys standard dummy text ever since the 1500s"),
   DartBook(
-      title: 'Lorem Ipsum has been',
+      title: 'ওয়াইল লুপ (While Loop)',
       description:
           "Lorem Ipsum has been the industrys standard dummy text ever since the 1500s"),
   DartBook(
-      title: 'Lorem Ipsum has been',
+      title: 'ডু-ওয়াইল লুপ (Do-While Loop)',
+      description:
+          "Lorem Ipsum has been the industrys standard dummy text ever since the 1500s"),
+  DartBook(
+      title: 'বুলিয়ান (Boolean)',
+      description:
+          "Lorem Ipsum has been the industrys standard dummy text ever since the 1500s"),
+  DartBook(
+      title: 'ডার্ট ফাংশন (Dart Functions)',
+      description:
+          "Lorem Ipsum has been the industrys standard dummy text ever since the 1500s"),
+  DartBook(
+      title: 'ডার্ট রিকারশন (Dart Recursion)',
+      description:
+          "Lorem Ipsum has been the industrys standard dummy text ever since the 1500s"),
+  DartBook(
+      title: 'অবজেক্ট-অরিয়েন্টেড প্রোগ্রামিং (OOP)',
+      description:
+          "Lorem Ipsum has been the industrys standard dummy text ever since the 1500s"),
+  DartBook(
+      title: 'ক্লাস (Class)',
+      description:
+          "Lorem Ipsum has been the industrys standard dummy text ever since the 1500s"),
+  DartBook(
+      title: 'অবজেক্ট (Object)',
+      description:
+          "Lorem Ipsum has been the industrys standard dummy text ever since the 1500s"),
+  DartBook(
+      title: 'ইনহেরিটেন্স (Inheritance)',
+      description:
+          "Lorem Ipsum has been the industrys standard dummy text ever since the 1500s"),
+  DartBook(
+      title: 'পলিমর্ফিজম (Polymorphism)',
+      description:
+          "Lorem Ipsum has been the industrys standard dummy text ever since the 1500s"),
+  DartBook(
+      title: 'কাপসুলেশন (Encapsulation)',
+      description:
+          "Lorem Ipsum has been the industrys standard dummy text ever since the 1500s"),
+  DartBook(
+      title: 'এবস্ট্রাক্ট ক্লাস (Abstract Class)',
+      description:
+          "Lorem Ipsum has been the industrys standard dummy text ever since the 1500s"),
+  DartBook(
+      title: 'ইন্টারফেস (Interfaces)',
+      description:
+          "Lorem Ipsum has been the industrys standard dummy text ever since the 1500s"),
+  DartBook(
+      title: 'মেথড (Methods)',
+      description:
+          "Lorem Ipsum has been the industrys standard dummy text ever since the 1500s"),
+  DartBook(
+      title: 'গেটার এবং সেটার (getters & setters)',
+      description:
+          "Lorem Ipsum has been the industrys standard dummy text ever since the 1500s"),
+  DartBook(
+      title: 'Exception',
       description:
           "Lorem Ipsum has been the industrys standard dummy text ever since the 1500s"),
 ];

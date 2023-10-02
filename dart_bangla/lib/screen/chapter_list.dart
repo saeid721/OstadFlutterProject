@@ -8,10 +8,10 @@ class ChapterListScreen extends StatefulWidget {
   final String title;
 
   @override
-  State<ChapterListScreen> createState() => _MyHomePageState();
+  State<ChapterListScreen> createState() => _ChapterListScreenState();
 }
 
-class _MyHomePageState extends State<ChapterListScreen> {
+class _ChapterListScreenState extends State<ChapterListScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(

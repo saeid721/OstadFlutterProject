@@ -4,7 +4,7 @@ import 'package:flutter/material.dart';
 class ChapterDetailsScreen extends StatelessWidget {
   final DartBook dartBook;
 
-  const ChapterDetailsScreen(this.dartBook);
+  const ChapterDetailsScreen(this.dartBook, {super.key});
 
   @override
   Widget build(BuildContext context) {
