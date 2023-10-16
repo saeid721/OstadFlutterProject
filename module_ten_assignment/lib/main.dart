@@ -90,7 +90,7 @@ class _HomeScreenState extends State<HomeScreen> {
                 },
                 controller: descripCon,
                 decoration: InputDecoration(
-                    hintText: 'Add Title',
+                    hintText: 'Add description',
                     border: OutlineInputBorder(
                         borderRadius: BorderRadius.circular(10))),
               ),
