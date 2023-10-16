@@ -212,7 +212,7 @@ class _HomeScreenState extends State<HomeScreen> {
                                         }
                                       },
                                       style: ElevatedButton.styleFrom(
-                                          backgroundColor: Colors.red,
+                                          backgroundColor: Colors.white,
                                           minimumSize: const Size(90, 40)),
                                       child: const Text(
                                         'Edit Done',
@@ -225,7 +225,7 @@ class _HomeScreenState extends State<HomeScreen> {
                       },
                       child: const Text(
                         'Edit',
-                        style: TextStyle(color: Colors.blue),
+                        style: TextStyle(color: Colors.red),
                       )),
                   GestureDetector(
                     onTap: () {
@@ -235,7 +235,7 @@ class _HomeScreenState extends State<HomeScreen> {
                     },
                     child: const Text(
                       'Delete',
-                      style: TextStyle(color: Colors.blue),
+                      style: TextStyle(color: Colors.red),
                     ),
                   ),
                 ],
