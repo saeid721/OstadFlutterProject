@@ -16,7 +16,6 @@ class MyApp extends StatelessWidget {
       title: 'Dart Bangla Tutorial',
       theme: ThemeData(
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.amber),
-        useMaterial3: true,
       ),
       home: const ChapterListScreen(title: 'Dart Bangla Tutorial'),
     );

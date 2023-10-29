@@ -21,6 +21,24 @@
       <excludeFolder url="file://$MODULE_DIR$/module_eight_assignment/.pub" />
       <excludeFolder url="file://$MODULE_DIR$/module_eight_assignment/build" />
       <excludeFolder url="file://$MODULE_DIR$/module_eight_assignment/.dart_tool" />
+      <excludeFolder url="file://$MODULE_DIR$/dart_bangla/.dart_tool" />
+      <excludeFolder url="file://$MODULE_DIR$/dart_bangla/.pub" />
+      <excludeFolder url="file://$MODULE_DIR$/dart_bangla/build" />
+      <excludeFolder url="file://$MODULE_DIR$/module_eight_live_test/.dart_tool" />
+      <excludeFolder url="file://$MODULE_DIR$/module_eight_live_test/.pub" />
+      <excludeFolder url="file://$MODULE_DIR$/module_eight_live_test/build" />
+      <excludeFolder url="file://$MODULE_DIR$/module_nine_assignment/.dart_tool" />
+      <excludeFolder url="file://$MODULE_DIR$/module_nine_assignment/.pub" />
+      <excludeFolder url="file://$MODULE_DIR$/module_nine_assignment/build" />
+      <excludeFolder url="file://$MODULE_DIR$/module_nine_live_test/.dart_tool" />
+      <excludeFolder url="file://$MODULE_DIR$/module_nine_live_test/.pub" />
+      <excludeFolder url="file://$MODULE_DIR$/module_nine_live_test/build" />
+      <excludeFolder url="file://$MODULE_DIR$/module_ten_assignment/.dart_tool" />
+      <excludeFolder url="file://$MODULE_DIR$/module_ten_assignment/.pub" />
+      <excludeFolder url="file://$MODULE_DIR$/module_ten_assignment/build" />
+      <excludeFolder url="file://$MODULE_DIR$/module_ten_live_test/.dart_tool" />
+      <excludeFolder url="file://$MODULE_DIR$/module_ten_live_test/.pub" />
+      <excludeFolder url="file://$MODULE_DIR$/module_ten_live_test/build" />
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
