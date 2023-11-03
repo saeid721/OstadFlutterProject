@@ -4,15 +4,17 @@ import 'package:http/http.dart as http;
 import 'Weather.dart';
 import 'WeatherCard.dart';
 
-void main() => runApp(WeatherApp());
+void main() => runApp(const WeatherApp());
 
 class WeatherApp extends StatelessWidget {
+  const WeatherApp({super.key});
+
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
       home: Scaffold(
         appBar: AppBar(
-          title: Text('Weather Information'),
+          title: const Text('Weather Information'),
         ),
         body: WeatherList(),
       ),
@@ -21,6 +23,8 @@ class WeatherApp extends StatelessWidget {
 }
 
 class WeatherList extends StatefulWidget {
+  const WeatherList({super.key});
+
   @override
   _WeatherListState createState() => _WeatherListState();
 }
