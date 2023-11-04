@@ -39,6 +39,9 @@
       <excludeFolder url="file://$MODULE_DIR$/module_ten_live_test/.dart_tool" />
       <excludeFolder url="file://$MODULE_DIR$/module_ten_live_test/.pub" />
       <excludeFolder url="file://$MODULE_DIR$/module_ten_live_test/build" />
+      <excludeFolder url="file://$MODULE_DIR$/module_eleven_class/.dart_tool" />
+      <excludeFolder url="file://$MODULE_DIR$/module_eleven_class/.pub" />
+      <excludeFolder url="file://$MODULE_DIR$/module_eleven_class/build" />
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
