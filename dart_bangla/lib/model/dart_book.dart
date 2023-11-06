@@ -17,6 +17,7 @@ List<DartBook> chaptarList = [
       title: 'ডার্ট প্রোগ্রামিং ভাষা পরিচিতি',
       //programImage: 'ডার্ট প্রোগ্রামিং ভাষা পরিচিতি',
       description:
+<<<<<<< Updated upstream
           '''ডার্ট একটি সহজ এবং পাওয়ারফুল প্রোগ্রামিং ভাষা যা গুগল দ্বারা তৈরি হয়েছে, এবং এটি ওয়েব ডেভেলপমেন্ট এবং মোবাইল ডেভেলপমেন্টে ব্যবহৃত হয়। এটি একটি ওপেন সোর্স প্রোজেক্ট এবং এর দ্বারা ওয়েব এবং মোবাইল অ্যাপ্লিকেশন তৈরি করা যায়।
           ডার্ট সিনট্যাক্স উদাহরণ:
           void main() { 
@@ -49,6 +50,10 @@ List<DartBook> chaptarList = [
             greet(); 
           } 
         '''),
+=======
+          '''Lorem Ipsum is পরিচিতি dummy text of the printing and typesetting industry.
+          Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.'''),
+>>>>>>> Stashed changes
   DartBook(
       title: 'কীওয়ার্ড (Keywords)',
       description:
