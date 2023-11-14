@@ -2,15 +2,34 @@ import 'dart:convert';
 
 import 'package:http/http.dart';
 
+import 'network_response.dart';
+
 class NetworkCaller {
-  Future postRequest(String rul, {Map<String, dynamic>? body}) async {
+  Future<NetworkResponse> postRequest(String url,
+      {Map<String, dynamic>? body}) async {
     try {
-      final Response response = await post(Uri.parse(url),
-          body: jsonEncode(body),
-          headers: {'Content-type': 'Application/json'});
+      final Response response =
+          await post(Uri.parse(url), body: jsonEncode(body), headers: {
+        'Content-type': 'Application/json',
+      });
       if (response.statusCode == 200) {
-        return response;
+        return NetworkResponse(
+          isSuccess: true,
+          jsonResponse: jsonDecode(response.body),
+          statusCode: 200,
+        );
+      } else {
+        return NetworkResponse(
+          isSuccess: false,
+          statusCode: response.statusCode,
+          jsonResponse: jsonDecode(response.body),
+        );
       }
-    } catch (e) {}
+    } catch (e) {
+      return NetworkResponse(
+        isSuccess: false,
+        errorMassage: e.toString(),
+      );
+    }
   }
 }
