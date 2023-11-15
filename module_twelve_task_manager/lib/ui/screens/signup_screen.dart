@@ -3,6 +3,7 @@ import 'package:module_twelve_task_manager/data/network_coller/network_coller.da
 import 'package:module_twelve_task_manager/data/network_coller/network_response.dart';
 import '../../data/utility/urls.dart';
 import '../widgets/body_background.dart';
+import '../widgets/snack_massage.dart';
 
 class SignUpScreen extends StatefulWidget {
   const SignUpScreen({super.key});
@@ -127,24 +128,24 @@ class _SignUpScreenState extends State<SignUpScreen> {
                           if (_formKey.currentState!.validate()) {
                             final NetworkResponse response =
                                 await NetworkCaller()
-                                    .postRequest(Urls.registration);
+                                    .postRequest(Urls.registration, body: {
+                              "email": _emailTEController.text.trim(),
+                              "firstName": _firstNameTEController.text.trim(),
+                              "lastName": _lastNameTEController.text.trim(),
+                              "mobile": _mobileEController.text.trim(),
+                              "password": _passwordTEController.text,
+                            });
                             if (response.isSuccess) {
                               if (mounted) {
-                                ScaffoldMessenger.of(context).showSnackBar(
-                                  const SnackBar(
-                                    content: Text(
-                                        'Accont has been created! Please login.'),
-                                  ),
-                                );
+                                showSnackMessage(context,
+                                    'Accont has been created! Please login.');
                               }
                             } else {
                               if (mounted) {
-                                ScaffoldMessenger.of(context).showSnackBar(
-                                  const SnackBar(
-                                    content: Text(
-                                        'Account creation failed! Please try egain.'),
-                                  ),
-                                );
+                                showSnackMessage(
+                                    context,
+                                    'Account creation failed! Please try egain.',
+                                    true);
                               }
                             }
                           }
