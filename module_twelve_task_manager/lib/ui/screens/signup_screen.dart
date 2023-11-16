@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:module_twelve_task_manager/data/network_coller/network_coller.dart';
-import 'package:module_twelve_task_manager/data/network_coller/network_response.dart';
+import '../../data/network_coller/network_coller.dart';
+import '../../data/network_coller/network_response.dart';
 import '../../data/utility/urls.dart';
 import '../widgets/body_background.dart';
 import '../widgets/snack_massage.dart';
@@ -19,6 +19,8 @@ class _SignUpScreenState extends State<SignUpScreen> {
   final TextEditingController _mobileEController = TextEditingController();
   final TextEditingController _passwordTEController = TextEditingController();
   final GlobalKey<FormState> _formKey = GlobalKey<FormState>();
+
+  bool _signUpInprogress = false;
 
   @override
   Widget build(BuildContext context) {
@@ -123,34 +125,15 @@ class _SignUpScreenState extends State<SignUpScreen> {
                     ),
                     SizedBox(
                       width: double.infinity,
-                      child: ElevatedButton(
-                        onPressed: () async {
-                          if (_formKey.currentState!.validate()) {
-                            final NetworkResponse response =
-                                await NetworkCaller()
-                                    .postRequest(Urls.registration, body: {
-                              "email": _emailTEController.text.trim(),
-                              "firstName": _firstNameTEController.text.trim(),
-                              "lastName": _lastNameTEController.text.trim(),
-                              "mobile": _mobileEController.text.trim(),
-                              "password": _passwordTEController.text,
-                            });
-                            if (response.isSuccess) {
-                              if (mounted) {
-                                showSnackMessage(context,
-                                    'Accont has been created! Please login.');
-                              }
-                            } else {
-                              if (mounted) {
-                                showSnackMessage(
-                                    context,
-                                    'Account creation failed! Please try egain.',
-                                    true);
-                              }
-                            }
-                          }
-                        },
-                        child: const Icon(Icons.arrow_circle_right_outlined),
+                      child: Visibility(
+                        visible: _signUpInprogress == false,
+                        replacement: const Center(
+                          child: CircularProgressIndicator(),
+                        ),
+                        child: ElevatedButton(
+                          onPressed: _signUp,
+                          child: const Icon(Icons.arrow_circle_right_outlined),
+                        ),
                       ),
                     ),
                     const SizedBox(
@@ -185,6 +168,47 @@ class _SignUpScreenState extends State<SignUpScreen> {
         ),
       ),
     );
+  }
+
+  Future<void> _signUp() async {
+    if (_formKey.currentState!.validate()) {
+      _signUpInprogress = true;
+      if (mounted) {
+        setState(() {});
+      }
+      final NetworkResponse response =
+          await NetworkCaller().postRequest(Urls.registration, body: {
+        "email": _emailTEController.text.trim(),
+        "firstName": _firstNameTEController.text.trim(),
+        "lastName": _lastNameTEController.text.trim(),
+        "mobile": _mobileEController.text.trim(),
+        "password": _passwordTEController.text,
+      });
+
+      _signUpInprogress = false;
+      if (mounted) {
+        setState(() {});
+      }
+      if (response.isSuccess) {
+        _clearTextFields();
+        if (mounted) {
+          showSnackMessage(context, 'Accont has been created! Please login.');
+        }
+      } else {
+        if (mounted) {
+          showSnackMessage(
+              context, 'Account creation failed! Please try egain.', true);
+        }
+      }
+    }
+  }
+
+  void _clearTextFields() {
+    _emailTEController.clear();
+    _firstNameTEController.clear();
+    _lastNameTEController.clear();
+    _mobileEController.clear();
+    _passwordTEController.clear();
   }
 
   @override

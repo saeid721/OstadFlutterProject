@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+import 'package:module_twelve_task_manager/ui/screens/main_bottom_nav_screen.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 import '../widgets/body_background.dart';
 import '../screens/login_screen.dart';
 
@@ -17,11 +19,17 @@ class _SplashScreenState extends State<SplashScreen> {
     goToLogin();
   }
 
-  void goToLogin() {
-    Future.delayed(Duration(seconds: 2)).then((value) {
+  Future<void> goToLogin() async {
+    SharedPreferences sharedPreferences = await SharedPreferences.getInstance();
+    String? token = sharedPreferences.getString('token');
+    Future.delayed(const Duration(seconds: 2)).then((value) {
       Navigator.pushAndRemoveUntil(
           context,
-          MaterialPageRoute(builder: (context) => const LoginScreen()),
+          MaterialPageRoute(
+            builder: (context) => token == null
+                ? const LoginScreen()
+                : const MainBottomNavScreen(),
+          ),
           (route) => false);
     });
   }
