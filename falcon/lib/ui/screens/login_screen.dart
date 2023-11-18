@@ -1,11 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:module_twelve_task_manager/data/models/user_model.dart';
 import 'package:module_twelve_task_manager/data/network_coller/network_coller.dart';
 import 'package:module_twelve_task_manager/data/network_coller/network_response.dart';
 import 'package:module_twelve_task_manager/data/utility/urls.dart';
-import 'package:module_twelve_task_manager/ui/controller/auth_controller.dart';
 import 'package:module_twelve_task_manager/ui/widgets/snack_massage.dart';
-
+import 'package:shared_preferences/shared_preferences.dart';
 import '../screens/main_bottom_nav_screen.dart';
 import '../screens/forgot_password.dart';
 import '../screens/signup_screen.dart';
@@ -162,8 +160,10 @@ class _LoginScreenState extends State<LoginScreen> {
       setState(() {});
     }
     if (response.isSuccess) {
-      await AuthController.saveUserInformation(response.jsonResponse['token'],
-          UserModel.fromJson(response.jsonResponse['data']));
+      SharedPreferences sharedPreferences =
+          await SharedPreferences.getInstance();
+      await sharedPreferences.setString(
+          'token', response.jsonResponse['token']);
       if (mounted) {
         Navigator.push(
           context,
