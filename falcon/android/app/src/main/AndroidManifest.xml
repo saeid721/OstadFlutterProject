@@ -1,6 +1,6 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android">
     <application
-        android:label="module_twelve_task_manager"
+        android:label="Falcon Solution Ltd"
         android:name="${applicationName}"
         android:icon="@mipmap/ic_launcher">
         <activity

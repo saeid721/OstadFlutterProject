@@ -1,8 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:module_twelve_task_manager/ui/screens/cancelled_tasks_screen.dart';
-import 'package:module_twelve_task_manager/ui/screens/completed_tasks_screen.dart';
-import 'package:module_twelve_task_manager/ui/screens/new_tasks_screen.dart';
-import 'package:module_twelve_task_manager/ui/screens/progress_tasks_screen.dart';
+import 'falcon_home_screen.dart';
+import 'service_items_list_screen.dart';
+import 'product_name_list_details.dart';
+import 'project_pictures_screen.dart';
+import 'Customer_List_Screen.dart';
 
 class MainBottomNavScreen extends StatefulWidget {
   const MainBottomNavScreen({super.key});
@@ -14,11 +15,12 @@ class MainBottomNavScreen extends StatefulWidget {
 class _MainBottomNavScreenState extends State<MainBottomNavScreen> {
   int _selectedIndex = 0;
 
-  List<Widget> _screens = const [
-    NewTasksScreen(),
-    ProgressTasksScreen(),
-    CompletedTasksScreen(),
-    CancelledTasksScreen(),
+  final List<Widget> _screens = const [
+    FalconHomeScreen(),
+    ServiceItemsListScreen(),
+    ProductNameScreen(),
+    ProjectPicturesScreen(),
+    CustomerListScreen(),
   ];
   @override
   Widget build(BuildContext context) {
@@ -34,11 +36,13 @@ class _MainBottomNavScreenState extends State<MainBottomNavScreen> {
         unselectedItemColor: Colors.grey,
         showSelectedLabels: true,
         items: const [
-          BottomNavigationBarItem(icon: Icon(Icons.abc), label: 'New'),
+          BottomNavigationBarItem(icon: Icon(Icons.home), label: 'Home'),
+          BottomNavigationBarItem(icon: Icon(Icons.redeem), label: 'Services'),
+          BottomNavigationBarItem(icon: Icon(Icons.book), label: 'Products'),
           BottomNavigationBarItem(
-              icon: Icon(Icons.change_circle_outlined), label: 'In Process'),
-          BottomNavigationBarItem(icon: Icon(Icons.done), label: 'Completed'),
-          BottomNavigationBarItem(icon: Icon(Icons.close), label: 'Cancelled'),
+              icon: Icon(Icons.collections), label: 'Pictures'),
+          BottomNavigationBarItem(
+              icon: Icon(Icons.person_add), label: 'Customer'),
         ],
       ),
     );

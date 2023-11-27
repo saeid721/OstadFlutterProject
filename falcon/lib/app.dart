@@ -1,15 +1,15 @@
 import 'package:flutter/material.dart';
-import 'ui/screens/splash_screen.dart';
+import 'ui/screens/landing_screen.dart';
 
-class TaskManagerApp extends StatelessWidget {
-  const TaskManagerApp({super.key});
+class FalconAppsScreen extends StatelessWidget {
+  const FalconAppsScreen({super.key});
 
   // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      home: const SplashScreen(),
+      home: const LandingScreen(),
       theme: ThemeData(
         inputDecorationTheme: const InputDecorationTheme(
           fillColor: Colors.white,
@@ -31,7 +31,7 @@ class TaskManagerApp extends StatelessWidget {
         primarySwatch: Colors.green,
         elevatedButtonTheme: ElevatedButtonThemeData(
           style: ElevatedButton.styleFrom(
-            padding: EdgeInsets.symmetric(vertical: 10),
+            padding: const EdgeInsets.symmetric(vertical: 10),
           ),
         ),
       ),
