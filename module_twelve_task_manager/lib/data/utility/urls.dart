@@ -1,4 +1,4 @@
-import 'package:module_twelve_task_manager/ui/widgets/task_item_card.dart';
+import '../../ui/widgets/task_item_card.dart';
 
 class Urls {
   static const String _baseUrl = 'https://task.teamrabbil.com/api/v1';
@@ -10,6 +10,10 @@ class Urls {
       '$_baseUrl/listTaskByStatus/${TaskStatus.New.name}';
   static String getProgressTasks =
       '$_baseUrl/listTaskByStatus/${TaskStatus.Progress.name}';
+  static String getCompletedTasks =
+      '$_baseUrl/listTaskByStatus/${TaskStatus.Completed.name}';
+  static String getCancelledTasks =
+      '$_baseUrl/listTaskByStatus/${TaskStatus.Cancelled.name}';
   static String updateTaskStatus(String taskId, String status) =>
       '$_baseUrl/updateTaskStatus/$taskId/$status';
 }

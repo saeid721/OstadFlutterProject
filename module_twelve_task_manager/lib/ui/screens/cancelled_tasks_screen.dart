@@ -1,5 +1,9 @@
 import 'package:flutter/material.dart';
 
+import '../../data/models/task_list_model.dart';
+import '../../data/network_coller/network_coller.dart';
+import '../../data/network_coller/network_response.dart';
+import '../../data/utility/urls.dart';
 import '../widgets/profile_summery_card.dart';
 import '../widgets/task_item_card.dart';
 
@@ -11,6 +15,30 @@ class CancelledTasksScreen extends StatefulWidget {
 }
 
 class _CancelledTasksScreenState extends State<CancelledTasksScreen> {
+  bool getCancelledTaskInProgress = false;
+  TaskListModel taskListModel = TaskListModel();
+  Future<void> getCancelledTaskList() async {
+    getCancelledTaskInProgress = true;
+    if (mounted) {
+      setState(() {});
+    }
+    final NetworkResponse response =
+        await NetworkCaller().getRequest(Urls.getCancelledTasks);
+    if (response.isSuccess) {
+      taskListModel = TaskListModel.fromJson(response.jsonResponse);
+    }
+    getCancelledTaskInProgress = false;
+    if (mounted) {
+      setState(() {});
+    }
+  }
+
+  @override
+  void initState() {
+    super.initState();
+    getCancelledTaskList();
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -19,11 +47,31 @@ class _CancelledTasksScreenState extends State<CancelledTasksScreen> {
           children: [
             const ProfileSummeryCard(),
             Expanded(
-              child: ListView.builder(
-                itemCount: 5,
-                itemBuilder: (context, index) {
-                  //return const TaskItemCard();
-                },
+              child: Visibility(
+                visible: getCancelledTaskInProgress == false,
+                replacement: const Center(
+                  child: CircularProgressIndicator(),
+                ),
+                child: RefreshIndicator(
+                  onRefresh: getCancelledTaskList,
+                  child: ListView.builder(
+                    itemCount: taskListModel.taskList?.length ?? 0,
+                    itemBuilder: (context, index) {
+                      return TaskItemCard(
+                        task: taskListModel.taskList![index],
+                        onStatusChanage: () {
+                          getCancelledTaskList();
+                        },
+                        showProgress: (inProgress) {
+                          getCancelledTaskInProgress = inProgress;
+                          if (mounted) {
+                            setState(() {});
+                          }
+                        },
+                      );
+                    },
+                  ),
+                ),
               ),
             ),
           ],

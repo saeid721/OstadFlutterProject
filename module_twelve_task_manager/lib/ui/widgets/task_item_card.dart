@@ -40,7 +40,7 @@ class _TaskItemCardState extends State<TaskItemCard> {
   @override
   Widget build(BuildContext context) {
     return Card(
-      margin: EdgeInsets.symmetric(horizontal: 16, vertical: 6),
+      margin: const EdgeInsets.symmetric(horizontal: 16, vertical: 6),
       child: Padding(
         padding: const EdgeInsets.all(16.0),
         child: Column(
@@ -48,7 +48,7 @@ class _TaskItemCardState extends State<TaskItemCard> {
           children: [
             Text(
               widget.task.title ?? '',
-              style: TextStyle(
+              style: const TextStyle(
                 fontSize: 18,
                 fontWeight: FontWeight.w500,
               ),
@@ -61,7 +61,7 @@ class _TaskItemCardState extends State<TaskItemCard> {
                 Chip(
                   label: Text(
                     widget.task.status ?? 'New',
-                    style: TextStyle(color: Colors.white),
+                    style: const TextStyle(color: Colors.white),
                   ),
                   backgroundColor: Colors.green,
                 ),
@@ -69,13 +69,13 @@ class _TaskItemCardState extends State<TaskItemCard> {
                   children: [
                     IconButton(
                       onPressed: () {},
-                      icon: Icon(Icons.delete_forever_outlined),
+                      icon: const Icon(Icons.delete_forever_outlined),
                     ),
                     IconButton(
                       onPressed: () {
                         showUpdateStatusModel();
                       },
-                      icon: Icon(Icons.edit),
+                      icon: const Icon(Icons.edit),
                     ),
                   ],
                 ),
