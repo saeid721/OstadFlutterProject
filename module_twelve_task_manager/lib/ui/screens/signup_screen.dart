@@ -13,10 +13,10 @@ class SignUpScreen extends StatefulWidget {
 }
 
 class _SignUpScreenState extends State<SignUpScreen> {
-  final TextEditingController _emailTEController = TextEditingController();
   final TextEditingController _firstNameTEController = TextEditingController();
   final TextEditingController _lastNameTEController = TextEditingController();
-  final TextEditingController _mobileEController = TextEditingController();
+  final TextEditingController _emailTEController = TextEditingController();
+  final TextEditingController _mobileTEController = TextEditingController();
   final TextEditingController _passwordTEController = TextEditingController();
   final GlobalKey<FormState> _formKey = GlobalKey<FormState>();
 
@@ -41,22 +41,6 @@ class _SignUpScreenState extends State<SignUpScreen> {
                     Text(
                       'Joint With Us',
                       style: Theme.of(context).textTheme.titleLarge,
-                    ),
-                    TextFormField(
-                      controller: _emailTEController,
-                      keyboardType: TextInputType.emailAddress,
-                      decoration: const InputDecoration(
-                        hintText: 'Email',
-                      ),
-                      validator: (String? value) {
-                        if (value?.trim().isEmpty ?? true) {
-                          return 'Enter your valid email';
-                        }
-                        return null;
-                      },
-                    ),
-                    const SizedBox(
-                      height: 24,
                     ),
                     TextFormField(
                       controller: _firstNameTEController,
@@ -89,7 +73,23 @@ class _SignUpScreenState extends State<SignUpScreen> {
                       height: 24,
                     ),
                     TextFormField(
-                      controller: _mobileEController,
+                      controller: _emailTEController,
+                      keyboardType: TextInputType.emailAddress,
+                      decoration: const InputDecoration(
+                        hintText: 'Email',
+                      ),
+                      validator: (String? value) {
+                        if (value?.trim().isEmpty ?? true) {
+                          return 'Enter your valid email';
+                        }
+                        return null;
+                      },
+                    ),
+                    const SizedBox(
+                      height: 24,
+                    ),
+                    TextFormField(
+                      controller: _mobileTEController,
                       keyboardType: TextInputType.phone,
                       decoration: const InputDecoration(
                         hintText: 'Mobile',
@@ -181,7 +181,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
         "email": _emailTEController.text.trim(),
         "firstName": _firstNameTEController.text.trim(),
         "lastName": _lastNameTEController.text.trim(),
-        "mobile": _mobileEController.text.trim(),
+        "mobile": _mobileTEController.text.trim(),
         "password": _passwordTEController.text,
       });
 
@@ -207,7 +207,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
     _emailTEController.clear();
     _firstNameTEController.clear();
     _lastNameTEController.clear();
-    _mobileEController.clear();
+    _mobileTEController.clear();
     _passwordTEController.clear();
   }
 
@@ -216,7 +216,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
     _emailTEController.dispose();
     _firstNameTEController.dispose();
     _lastNameTEController.dispose();
-    _mobileEController.dispose();
+    _mobileTEController.dispose();
     _passwordTEController.dispose();
     super.dispose();
   }

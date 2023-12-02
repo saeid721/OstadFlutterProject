@@ -16,4 +16,6 @@ class Urls {
       '$_baseUrl/listTaskByStatus/${TaskStatus.Cancelled.name}';
   static String updateTaskStatus(String taskId, String status) =>
       '$_baseUrl/updateTaskStatus/$taskId/$status';
+
+  static const String updateProfile = '$_baseUrl/profileUpdate';
 }
