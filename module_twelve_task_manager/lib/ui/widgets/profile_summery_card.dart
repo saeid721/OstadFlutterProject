@@ -19,11 +19,18 @@ class ProfileSummeryCard extends StatefulWidget {
   State<ProfileSummeryCard> createState() => _ProfileSummeryCardState();
 }
 
+String base64String = AuthController.user?.photo ?? '';
+
 class _ProfileSummeryCardState extends State<ProfileSummeryCard> {
   @override
   Widget build(BuildContext context) {
-    Uint8List imageBytes =
-        const Base64Decoder().convert(AuthController.user?.photo ?? '');
+    if (base64String.startsWith('data:image')) {
+      // Remove data URI prefix if present
+      base64String =
+          base64String.replaceFirst(RegExp(r'data:image/[^;]+;base64,'), '');
+    }
+
+    Uint8List imageBytes = const Base64Decoder().convert(base64String);
     return ListTile(
       onTap: () {
         if (widget.enableOnTap) {
