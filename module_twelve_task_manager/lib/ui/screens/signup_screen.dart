@@ -43,6 +43,22 @@ class _SignUpScreenState extends State<SignUpScreen> {
                       style: Theme.of(context).textTheme.titleLarge,
                     ),
                     TextFormField(
+                      controller: _emailTEController,
+                      keyboardType: TextInputType.emailAddress,
+                      decoration: const InputDecoration(
+                        hintText: 'Email',
+                      ),
+                      validator: (String? value) {
+                        if (value?.trim().isEmpty ?? true) {
+                          return 'Enter your valid email';
+                        }
+                        return null;
+                      },
+                    ),
+                    const SizedBox(
+                      height: 24,
+                    ),
+                    TextFormField(
                       controller: _firstNameTEController,
                       decoration: const InputDecoration(
                         hintText: 'First Name',
@@ -65,22 +81,6 @@ class _SignUpScreenState extends State<SignUpScreen> {
                       validator: (String? value) {
                         if (value?.trim().isEmpty ?? true) {
                           return 'Enter your last name';
-                        }
-                        return null;
-                      },
-                    ),
-                    const SizedBox(
-                      height: 24,
-                    ),
-                    TextFormField(
-                      controller: _emailTEController,
-                      keyboardType: TextInputType.emailAddress,
-                      decoration: const InputDecoration(
-                        hintText: 'Email',
-                      ),
-                      validator: (String? value) {
-                        if (value?.trim().isEmpty ?? true) {
-                          return 'Enter your valid email';
                         }
                         return null;
                       },
