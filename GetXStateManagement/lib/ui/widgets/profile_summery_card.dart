@@ -2,6 +2,7 @@ import 'dart:convert';
 import 'dart:typed_data';
 
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:module_twelve_task_manager/ui/controller/auth_controller.dart';
 import 'package:module_twelve_task_manager/ui/screens/login_screen.dart';
 import 'package:module_twelve_task_manager/ui/widgets/snack_massage.dart';
@@ -64,15 +65,8 @@ class _ProfileSummeryCardState extends State<ProfileSummeryCard> {
       ),
       trailing: IconButton(
         onPressed: () async {
-          await AuthController.clearAuthData();
-          if (mounted) {
-            Navigator.pushAndRemoveUntil(
-                context,
-                MaterialPageRoute(builder: (context) => LoginScreen()),
-                (route) => false);
-          } else {
-            showSnackMessage(context, 'Logout failed. Try again');
-          }
+          await Get.find<AuthController>().clearAuthData();
+          Get.offAll(const LoginScreen());
         },
         icon: const Icon(Icons.logout),
       ),

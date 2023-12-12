@@ -1,6 +1,7 @@
 import 'dart:convert';
 
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:image_picker/image_picker.dart';
 import '../../data/models/user_model.dart';
 import '../../data/network_coller/network_coller.dart';
@@ -200,7 +201,7 @@ class _EditProfileScreenState extends State<EditProfileScreen> {
       setState(() {});
     }
     if (response.isSuccess) {
-      AuthController.upadteUserInformation(
+      Get.find<AuthController>().upadteUserInformation(
         UserModel(
             firstName: _firstNameTEController.text.trim(),
             lastName: _lastNameTEController.text.trim(),
