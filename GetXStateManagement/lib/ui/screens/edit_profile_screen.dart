@@ -32,10 +32,10 @@ class _EditProfileScreenState extends State<EditProfileScreen> {
   @override
   void initState() {
     super.initState();
-    _firstNameTEController.text = AuthController.user?.firstName ?? "";
-    _lastNameTEController.text = AuthController.user?.lastName ?? '';
-    _emailTEController.text = AuthController.user?.email ?? '';
-    _mobileTEController.text = AuthController.user?.mobile ?? '';
+    _firstNameTEController.text = AuthController().user?.firstName ?? "";
+    _lastNameTEController.text = AuthController().user?.lastName ?? '';
+    _emailTEController.text = AuthController().user?.email ?? '';
+    _mobileTEController.text = AuthController().user?.mobile ?? '';
   }
 
   @override
@@ -207,7 +207,7 @@ class _EditProfileScreenState extends State<EditProfileScreen> {
             lastName: _lastNameTEController.text.trim(),
             email: _emailTEController.text.trim(),
             mobile: _mobileTEController.text.trim(),
-            photo: photoInBase64 ?? AuthController.user?.photo),
+            photo: photoInBase64 ?? AuthController().user?.photo),
       );
       if (mounted) {
         showSnackMessage(context, 'Update profile success!');
