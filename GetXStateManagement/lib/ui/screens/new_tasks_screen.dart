@@ -52,12 +52,7 @@ class _NewTasksScreenState extends State<NewTasksScreen> {
     return Scaffold(
       floatingActionButton: FloatingActionButton(
         onPressed: () {
-          Navigator.push(
-            context,
-            MaterialPageRoute(
-              builder: (context) => const AddNewTaskScreen(),
-            ),
-          );
+          Get.offAll(const AddNewTaskScreen());
           if (Response != null && Response == true) {
             Get.find<NewTaskController>().getNewTaskList();
             getTaskCountSummaryList();

@@ -28,14 +28,16 @@ class _EditProfileScreenState extends State<EditProfileScreen> {
   final GlobalKey<FormState> _formKey = GlobalKey<FormState>();
   bool _updateProfileInProgress = false;
 
+  AuthController authController = Get.find<AuthController>();
+
   XFile? photo;
   @override
   void initState() {
     super.initState();
-    _firstNameTEController.text = AuthController().user?.firstName ?? "";
-    _lastNameTEController.text = AuthController().user?.lastName ?? '';
-    _emailTEController.text = AuthController().user?.email ?? '';
-    _mobileTEController.text = AuthController().user?.mobile ?? '';
+    _firstNameTEController.text = authController.user?.firstName ?? "";
+    _lastNameTEController.text = authController.user?.lastName ?? '';
+    _emailTEController.text = authController.user?.email ?? '';
+    _mobileTEController.text = authController.user?.mobile ?? '';
   }
 
   @override
