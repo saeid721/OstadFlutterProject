@@ -37,15 +37,15 @@ class StudentList extends StatefulWidget {
 class _StudentListState extends State<StudentList> {
   FirebaseFirestore firebaseFirestore = FirebaseFirestore.instance;
 
-  // Future<void> getStudentData()async{
-  //   final QuerySnapshot result = await firebaseFirestore.collection('
-  //   questions').get();
-  //   print(result.size);
-  //   for (QueryDocumentSnapshot element in result.docs){
-  //     print(element.data());
-  //     print(element.get('name'));
-  //   }
-  // }
+   Future<void> getStudentData()async{
+     final QuerySnapshot result = await firebaseFirestore.collection('
+     questions').get();
+     print(result.size);
+    for (QueryDocumentSnapshot element in result.docs){
+       print(element.data());
+       print(element.get('name'));
+     }
+   }
   @override
   Widget build(BuildContext context) {
     return Scaffold(
