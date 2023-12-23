@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-import '../screen/homeScreen.dart';
+import '../screen/locationScreen.dart';
 
 void main() {
   runApp(const GoogleMapApp());
@@ -19,7 +19,7 @@ class GoogleMapApp extends StatelessWidget {
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.greenAccent),
         useMaterial3: true,
       ),
-      home: const HomeScreen(title: 'Location & Map Apps'),
+      home: const LocationScreen(),
     );
   }
 }
