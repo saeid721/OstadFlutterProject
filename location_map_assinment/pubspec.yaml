@@ -1,26 +1,29 @@
-name: location_map
+name: location_map_assinment
 description: "A new Flutter project."
 
 publish_to: 'none' # Remove this line if you wish to publish to pub.dev
+
 
 version: 1.0.0+1
 
 environment:
   sdk: '>=3.2.3 <4.0.0'
 
+
 dependencies:
   flutter:
     sdk: flutter
 
   cupertino_icons: ^1.0.2
-  google_maps_flutter: ^2.5.0
-  location: ^5.0.3
 
 dev_dependencies:
   flutter_test:
     sdk: flutter
 
-  flutter_lints: ^3.0.1
+  flutter_lints: ^2.0.0
+  google_maps_flutter: ^2.0.10
+  location: ^4.3.0
+
 
 flutter:
 
