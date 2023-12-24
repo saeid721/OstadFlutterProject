@@ -23,14 +23,12 @@ class _LocationScreenState extends State<LocationScreen> {
   }
 
   void listenToLocation() {
-    locationSubscription = location.onLocationChanged.listen(
-      (locationData) {
-        myLocation = locationData;
-        if (mounted) {
-          setState(() {});
-        }
-      },
-    );
+    locationSubscription = location.onLocationChanged.listen((locationData) {
+      myLocation = locationData;
+      if (mounted) {
+        setState(() {});
+      }
+    });
   }
 
   @override
