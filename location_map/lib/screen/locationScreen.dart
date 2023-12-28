@@ -42,9 +42,15 @@ class _LocationScreenState extends State<LocationScreen> {
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
           Text(
-              'My location ${myLocation?.latitude ?? ''} ${myLocation?.longitude}'),
+              'My location ${myLocation?.latitude ?? ''} ${myLocation?.longitude ?? ''}'),
           Text(
-              'My Location ${currentLocation?.latitude ?? ''} ${currentLocation?.longitude}'),
+              'My location ${myLocation?.latitude ?? ''} ${myLocation?.longitude ?? ''}'),
+          // StreamBuilder<Object>(
+          //     stream: location.onLocationChanged,
+          //     builder: (context, locationData) {
+          //       return Text(
+          //           'My Location ${locationData.data?.latitude ?? ''} ${locationData.data?.longitude ?? ''}');
+          //     }),
           ElevatedButton(
             onPressed: () async {
               currentLocation = await location.getLocation();
