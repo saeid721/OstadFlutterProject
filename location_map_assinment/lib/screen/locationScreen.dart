@@ -4,23 +4,12 @@ import 'package:flutter/material.dart';
 import 'package:google_maps_flutter/google_maps_flutter.dart';
 import 'package:location/location.dart';
 
-void main() => runApp(LocationMap());
-
-class LocationMap extends StatelessWidget {
+class LocationScreen extends StatefulWidget {
   @override
-  Widget build(BuildContext context) {
-    return MaterialApp(
-      home: MapScreen(),
-    );
-  }
+  _LocationScreenState createState() => _LocationScreenState();
 }
 
-class MapScreen extends StatefulWidget {
-  @override
-  _MapScreenState createState() => _MapScreenState();
-}
-
-class _MapScreenState extends State<MapScreen> {
+class _LocationScreenState extends State<LocationScreen> {
   Completer<GoogleMapController> _controller = Completer();
   late GoogleMapController mapController;
   late LocationData currentLocation;
@@ -46,7 +35,7 @@ class _MapScreenState extends State<MapScreen> {
     Polyline polyline = Polyline(
       polylineId: PolylineId("poly"),
       color: Colors.blue,
-      width: 3,
+      width: 6,
       points: polylineCoordinates,
     );
 
@@ -73,7 +62,7 @@ class _MapScreenState extends State<MapScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Flutter Map App'),
+        title: Text('Real-Time Location Tracker'),
       ),
       body: GoogleMap(
         mapType: MapType.normal,

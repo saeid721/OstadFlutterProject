@@ -1,6 +1,6 @@
 {
-    "name": "location_map_assinment",
-    "short_name": "location_map_assinment",
+    "name": "location_map",
+    "short_name": "location_map",
     "start_url": ".",
     "display": "standalone",
     "background_color": "#0175C2",
