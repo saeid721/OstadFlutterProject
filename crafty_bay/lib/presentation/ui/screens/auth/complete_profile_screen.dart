@@ -31,7 +31,7 @@ class CompleteProfileScreen extends StatelessWidget {
                 height: 5,
               ),
               const Text(
-                'Get started with us with your details',
+                'Get started with us with your details', 
               ), //style: Theme.of(context).textTheme.bodySmall,
               const SizedBox(
                 height: 16,

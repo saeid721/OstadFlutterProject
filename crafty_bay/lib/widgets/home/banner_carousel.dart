@@ -21,7 +21,7 @@ class _BannerCarouselState extends State<BannerCarousel> {
       children: [
         CarouselSlider(
           options: CarouselOptions(
-              height: widget.height ?? 180.0,
+              height: widget.height ?? 160.0,
               aspectRatio: 16 / 9,
               viewportFraction: 1,
               initialPage: 0,
@@ -46,7 +46,7 @@ class _BannerCarouselState extends State<BannerCarousel> {
                       horizontal: 1.0,
                     ),
                     decoration: BoxDecoration(
-                        color: Colors.amber,
+                        color: AppColors.primaryColor,
                         borderRadius: BorderRadius.circular(8)),
                     alignment: Alignment.center,
                     child: Text(
@@ -70,11 +70,11 @@ class _BannerCarouselState extends State<BannerCarousel> {
                     margin: const EdgeInsets.all(4),
                     decoration: BoxDecoration(
                       color:
-                          i == index ? AppColors.primaryColor : Colors.white,
+                          i == index ? AppColors.primaryColor : Colors.transparent,
                       border: Border.all(
                         color: i == index
                             ? AppColors.primaryColor
-                            : Colors.grey,
+                            : Colors.grey.shade400,
                       ),
                       borderRadius: BorderRadius.circular(30),
                     ),

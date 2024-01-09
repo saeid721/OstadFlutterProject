@@ -12,7 +12,7 @@ class CraftyBoy extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       title: 'E-commerce Project - Crafty Bay',
       theme: AppThemeData.lightThemeData,
-      home: const SplashScreen(title: 'Crafty Bay'),
+      home: const SplashScreen(),
     );
   }
 }
