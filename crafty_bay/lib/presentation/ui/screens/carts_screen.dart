@@ -26,11 +26,13 @@ class _CartsScreenState extends State<CartsScreen> {
       ),
       body: Column(
         children: [
-          const Expanded(
-            child: Column(
-              children: [
-                CartProductItems(),
-              ],
+          Expanded(
+            child: ListView.separated(
+              itemCount: 4,
+              itemBuilder: (context, index) {
+                return const CartProductItems();
+              },
+              separatorBuilder: (_, __) => const SizedBox(height: 8),
             ),
           ),
           totalPriceAndCheckSection,
@@ -132,7 +134,10 @@ class _CartProductItemsState extends State<CartProductItems> {
                     ),
                     IconButton(
                       onPressed: () {},
-                      icon: const Icon(Icons.delete_forever_outlined, color: Colors.grey,),
+                      icon: const Icon(
+                        Icons.delete_forever_outlined,
+                        color: Colors.grey,
+                      ),
                     ),
                   ],
                 ),
