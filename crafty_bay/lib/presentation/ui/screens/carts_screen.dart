@@ -1,10 +1,8 @@
 import 'package:crafty_bay/presentation/state_holders/main_bottom_nav_controller.dart';
 import 'package:crafty_bay/presentation/ui/utility/app_colors.dart';
-import 'package:crafty_bay/presentation/ui/utility/assets_path.dart';
 import 'package:crafty_bay/widgets/carts/cart_product_item.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:item_count_number_button/item_count_number_button.dart';
 
 class CartsScreen extends StatefulWidget {
   const CartsScreen({super.key});
