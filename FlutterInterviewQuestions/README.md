@@ -1,4 +1,4 @@
-# dart_bangla
+# flutter_image_viewer
 
 A new Flutter project.
 

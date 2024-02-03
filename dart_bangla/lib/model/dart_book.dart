@@ -17,43 +17,8 @@ List<DartBook> chaptarList = [
       title: 'ডার্ট প্রোগ্রামিং ভাষা পরিচিতি',
       //programImage: 'ডার্ট প্রোগ্রামিং ভাষা পরিচিতি',
       description:
-<<<<<<< Updated upstream
-          '''ডার্ট একটি সহজ এবং পাওয়ারফুল প্রোগ্রামিং ভাষা যা গুগল দ্বারা তৈরি হয়েছে, এবং এটি ওয়েব ডেভেলপমেন্ট এবং মোবাইল ডেভেলপমেন্টে ব্যবহৃত হয়। এটি একটি ওপেন সোর্স প্রোজেক্ট এবং এর দ্বারা ওয়েব এবং মোবাইল অ্যাপ্লিকেশন তৈরি করা যায়।
-          ডার্ট সিনট্যাক্স উদাহরণ:
-          void main() { 
-            print('Hello, World!'); 
-
-            // ভেরিয়েবল ডিক্লেয়ারেশন এবং মান প্রদান
-            String name = 'John'; 
-            int age = 30; 
-            double salary = 50000.50; 
-            bool isEmployed = true; 
-
-            // কন্ডিশনাল স্টেটমেন্ট 
-            if (age > 18) {
-              print('$name is an adult.'); 
-            } 
-            else {
-              print('$name is a minor.');
-            } 
-
-            // লুপ 
-            for (int i = 0; i < 5; i++) { 
-              print('Count: $i'); 
-            } 
-
-            // ফাংশন ডিফাইনিশন 
-            void greet() { 
-              print('Hello, $name!'); 
-            } 
-            // ফাংশন কল 
-            greet(); 
-          } 
-        '''),
-=======
           '''Lorem Ipsum is পরিচিতি dummy text of the printing and typesetting industry.
           Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.'''),
->>>>>>> Stashed changes
   DartBook(
       title: 'কীওয়ার্ড (Keywords)',
       description:
