@@ -10,7 +10,7 @@ class NetworkCaller {
     log(token.toString());
     final Response response = await get(Uri.parse(url), headers: {
       'token': token.toString(),
-      'content-type' : 'application/json'
+      'content-type': 'application/json'
     });
     log(response.headers.toString());
     log(response.statusCode.toString());
@@ -37,11 +37,15 @@ class NetworkCaller {
   }
 
   Future<ResponseData> postRequest(String url,
-      {Map<String, dynamic>? body}) async {
+      {Map<String, dynamic>? body, String? token}) async {
     log(url);
     log(body.toString());
-    final Response response =
-        await post(Uri.parse(url), body: jsonEncode(body));
+    final Response response = await post(Uri.parse(url),
+        body: jsonEncode(body),
+        headers: {
+          'token': token.toString(),
+          'content-type': 'application/json'
+        });
     log(response.statusCode.toString());
     log(response.body.toString());
     if (response.statusCode == 200) {

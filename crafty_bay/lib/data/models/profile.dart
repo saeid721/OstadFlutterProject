@@ -1,6 +1,6 @@
 class Profile {
   int? id;
-  String? firsName;
+  String? firstName;
   String? lastName;
   String? mobile;
   String? city;
@@ -11,7 +11,7 @@ class Profile {
 
   Profile(
       {this.id,
-      this.firsName,
+      this.firstName,
       this.lastName,
       this.mobile,
       this.city,
@@ -22,7 +22,7 @@ class Profile {
 
       Profile.fromJson(Map<String, dynamic> json) {
         id = json['id'];
-        firsName = json['firsName'];
+        firstName = json['firstName'];
         lastName = json['lastName'];
         mobile = json['mobile'];
         city = json['city'];
@@ -34,7 +34,7 @@ class Profile {
 
       Map<String, dynamic> toJson() => {
         'id': id,
-        'firsName': firsName,
+        'firstName': firstName,
         'lastName': lastName,
         'mobile': mobile,
         'city': city,
