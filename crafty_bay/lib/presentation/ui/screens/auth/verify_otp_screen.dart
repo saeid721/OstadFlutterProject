@@ -41,16 +41,16 @@ class _VerifyOtpScreenState extends State<VerifyOtpScreen> {
                 const SizedBox(
                   height: 24,
                 ),
-                const Text(
-                  'Enter OTP Coade',
-                ), //style: Theme.of(context.textTheme.titleLarge,
+                Text(
+                  'Enter OTP Coade', style: Theme.of(context).textTheme.titleLarge,
+                ),
 
                 const SizedBox(
                   height: 5,
                 ),
-                const Text(
-                  'A 6 digit OTP code has been sent',
-                ), //style: Theme.of(context).textTheme.bodySmall,
+                Text(
+                  'A 6 digit OTP code has been sent', style: Theme.of(context).textTheme.bodySmall,
+                ),
 
                 const SizedBox(
                   height: 24,

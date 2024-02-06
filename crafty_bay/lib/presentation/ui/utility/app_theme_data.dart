@@ -3,10 +3,11 @@ import 'package:flutter/material.dart';
 
 class AppThemeData {
   static ThemeData lightThemeData = ThemeData(
-    primarySwatch: MaterialColor(
-      AppColors.primaryColor.value,
-      AppColors.colorSwotch,
-    ),
+    // primarySwatch: MaterialColor(
+    //   AppColors.primaryColor.value,
+    //   AppColors.colorSwotch,
+    // ),
+    // colorSchemeSeed: AppColors.primaryColor,
     progressIndicatorTheme:
         const ProgressIndicatorThemeData(color: AppColors.primaryColor),
     inputDecorationTheme: const InputDecorationTheme(

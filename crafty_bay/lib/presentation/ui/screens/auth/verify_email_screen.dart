@@ -34,16 +34,17 @@ class _VerifyEmailScreenState extends State<VerifyEmailScreen> {
                 const SizedBox(
                   height: 24,
                 ),
-                const Text(
+                Text(
                   'Welcome back',
-                ), // style: Theme.of(context).textTheme.titleLarge,
+                  style: Theme.of(context).textTheme.titleLarge,
+                ),
                 const SizedBox(
                   height: 5,
                 ),
-                const Text(
+                Text(
                   'Please enter your email address',
-                ), //style: Theme.of(context).textTheme.bodySmall,
-
+                  style: Theme.of(context).textTheme.bodySmall,
+                ),
                 const SizedBox(
                   height: 16,
                 ),
@@ -60,7 +61,6 @@ class _VerifyEmailScreenState extends State<VerifyEmailScreen> {
                     return null;
                   },
                 ),
-
                 const SizedBox(
                   height: 24,
                 ),

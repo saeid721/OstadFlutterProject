@@ -40,16 +40,17 @@ class _CompleteProfileScreenState extends State<CompleteProfileScreen> {
                 const SizedBox(
                   height: 24,
                 ),
-                const Text(
-                  'Complete Profile',
-                ), //style: Theme.of(context.textTheme.titleLarge,
+                Text(
+                  'Complete Profile', style: Theme.of(context).textTheme.titleLarge,
+                ),
 
                 const SizedBox(
                   height: 5,
                 ),
-                const Text(
+                Text(
                   'Get started with us with your details',
-                ), //style: Theme.of(context).textTheme.bodySmall,
+                  style: Theme.of(context).textTheme.bodySmall,
+                ),
                 const SizedBox(
                   height: 16,
                 ),
