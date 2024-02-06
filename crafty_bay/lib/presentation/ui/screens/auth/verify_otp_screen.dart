@@ -1,5 +1,8 @@
+import 'package:crafty_bay/presentation/state_holders/verify_otp_controller.dart';
 import 'package:crafty_bay/presentation/ui/screens/auth/complete_profile_screen.dart';
+import 'package:crafty_bay/presentation/ui/screens/main_bottom_nav_screen.dart';
 import 'package:crafty_bay/presentation/ui/utility/app_colors.dart';
+import 'package:crafty_bay/widgets/center_circuler_progress_indicator.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:pin_code_fields/pin_code_fields.dart';
@@ -7,14 +10,15 @@ import 'package:pin_code_fields/pin_code_fields.dart';
 import '../../../../widgets/app_logo.dart';
 
 class VerifyOtpScreen extends StatefulWidget {
-  const VerifyOtpScreen({super.key});
+  const VerifyOtpScreen({super.key, required this.email});
+
+  final String email;
 
   @override
   State<VerifyOtpScreen> createState() => _VerifyOtpScreenState();
 }
 
 class _VerifyOtpScreenState extends State<VerifyOtpScreen> {
-
   final TextEditingController _otpTEController = TextEditingController();
   final GlobalKey<FormState> _formKey = GlobalKey<FormState>();
 
@@ -40,21 +44,21 @@ class _VerifyOtpScreenState extends State<VerifyOtpScreen> {
                 const Text(
                   'Enter OTP Coade',
                 ), //style: Theme.of(context.textTheme.titleLarge,
-            
+
                 const SizedBox(
                   height: 5,
                 ),
                 const Text(
-                  'A 4 digit OTP code has been sent',
+                  'A 6 digit OTP code has been sent',
                 ), //style: Theme.of(context).textTheme.bodySmall,
-            
+
                 const SizedBox(
                   height: 24,
                 ),
-            
+
                 PinCodeTextField(
                   controller: _otpTEController,
-                  length: 4,
+                  length: 6,
                   obscureText: false,
                   animationType: AnimationType.fade,
                   mainAxisAlignment: MainAxisAlignment.spaceAround,
@@ -83,17 +87,42 @@ class _VerifyOtpScreenState extends State<VerifyOtpScreen> {
                 ),
                 SizedBox(
                   width: double.infinity,
-                  child: ElevatedButton(
-                    onPressed: () {
-                      if (_formKey.currentState!.validate()){
-                        
-                      }
-                      Get.to(() => const CompleteProfileScreen());
-                    },
-                    child: const Text('Next'),
-                  ),
+                  child: GetBuilder<VerifyOTPController>(
+                      builder: (verifyOTPController) {
+                    return Visibility(
+                      visible: verifyOTPController.inProgress == false,
+                      replacement: const CenterCircularProgressIndicator(),
+                      child: ElevatedButton(
+                        onPressed: () async {
+                          if (_formKey.currentState!.validate()) {
+                            final bool response = await verifyOTPController
+                                .verifyOTP(widget.email, _otpTEController.text);
+
+                            if (response) {
+                              if (verifyOTPController
+                                  .shouldNavigateCompleteProfile) {
+                                Get.to(() => const CompleteProfileScreen());
+                              } else {
+                                Get.offAll(() => const MainBottomNavScreen());
+                              }
+                            } else {
+                              Get.showSnackbar(
+                                GetSnackBar(
+                                  title: 'OTP verification failed',
+                                  message: verifyOTPController.errorMessage,
+                                  duration: const Duration(seconds: 2),
+                                  isDismissible: true,
+                                ),
+                              );
+                            }
+                          }
+                        },
+                        child: const Text('Next'),
+                      ),
+                    );
+                  }),
                 ),
-            
+
                 const SizedBox(
                   height: 24,
                 ),
