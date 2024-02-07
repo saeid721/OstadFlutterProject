@@ -1,9 +1,11 @@
 import 'package:crafty_bay/presentation/state_holders/auth_controller.dart';
+import 'package:crafty_bay/presentation/state_holders/home_banner_controller.dart';
 import 'package:crafty_bay/presentation/state_holders/main_bottom_nav_controller.dart';
 import 'package:crafty_bay/presentation/ui/screens/auth/product_list_screen.dart';
 import 'package:crafty_bay/presentation/ui/screens/auth/verify_email_screen.dart';
 import 'package:crafty_bay/presentation/ui/utility/assets_path.dart';
 import 'package:crafty_bay/widgets/category_item.dart';
+import 'package:crafty_bay/widgets/center_circuler_progress_indicator.dart';
 import 'package:crafty_bay/widgets/home/circle_icon_button.dart';
 import 'package:crafty_bay/widgets/home/banner_carousel.dart';
 import 'package:crafty_bay/widgets/home/section_title.dart';
@@ -31,7 +33,17 @@ class _HomeScreenState extends State<HomeScreen> {
               const SizedBox(height: 8),
               searchTextField,
               const SizedBox(height: 16),
-              const BannerCarousel(),
+              SizedBox(
+                height: 210,
+                child: GetBuilder<HomeBannerController>(
+                  builder: (homeBannerController) {
+                    return Visibility(
+                        visible: homeBannerController.inProgress == false,
+                        replacement: const CenterCircularProgressIndicator(),
+                        child: const BannerCarousel());
+                  },
+                ),
+              ),
               const SizedBox(height: 16),
               SectionTitle(
                 title: 'All Categories',
@@ -157,4 +169,3 @@ class _HomeScreenState extends State<HomeScreen> {
     );
   }
 }
-

@@ -1,5 +1,5 @@
 class Urls{
-  static const String _baseUrl = 'http://ecom-api.teamrabbil.com/apis';
+  static const String _baseUrl = 'http://ecom-api.teamrabbil.com/api';
   
   static String sendEmailOtp(String email) => '$_baseUrl/UserLogin/$email';
 
@@ -7,4 +7,5 @@ class Urls{
 
   static String readProfile ='$_baseUrl/ReadProfile/';
   static String createProfile ='$_baseUrl/CreateProfile/';
+  static String homeBanner ='$_baseUrl/ListProductSlider/';
 }

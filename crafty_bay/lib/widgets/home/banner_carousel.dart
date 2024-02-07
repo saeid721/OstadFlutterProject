@@ -21,7 +21,7 @@ class _BannerCarouselState extends State<BannerCarousel> {
       children: [
         CarouselSlider(
           options: CarouselOptions(
-              height: widget.height ?? 160.0,
+              height: widget.height ?? 180.0,
               aspectRatio: 16 / 9,
               viewportFraction: 1,
               initialPage: 0,
