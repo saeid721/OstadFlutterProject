@@ -3,7 +3,7 @@ import 'package:crafty_bay/data/services/newtork_coller.dart';
 import 'package:crafty_bay/data/utility/urls.dart';
 import 'package:get/get.dart';
 
-class HomeBannerController extends GetxController {
+class CategoryController extends GetxController {
   bool _inProgress = false;
 
   bool get inProgress => _inProgress;
@@ -12,21 +12,21 @@ class HomeBannerController extends GetxController {
 
   String get errorMessage => _errorMessage;
 
-  CategoryListModel _bannerListModel = CategoryListModel();
+  CategoryListModel _categoryListModel = CategoryListModel();
 
-  CategoryListModel get bannerListModel => _bannerListModel;
+  CategoryListModel get categoryListModel => _categoryListModel;
 
-  Future<bool> getBannerList() async {
+  Future<bool> getCategoryList() async {
     _inProgress = true;
     bool isSuccess = false;
     update();
 
     final response = await NetworkCaller().getRequest(
-      Urls.homeBanner,
+      Urls.categoryList,
     );
     _inProgress = false;
     if (response.isSuccess) {
-      _bannerListModel = CategoryListModel.fromJson(response.responseData);
+      _categoryListModel = CategoryListModel.fromJson(response.responseData);
       isSuccess = true;
     } else {
       _errorMessage = response.errorMessage;

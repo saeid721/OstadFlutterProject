@@ -1,20 +1,22 @@
-import 'package:crafty_bay/data/models/banner.dart';
+import 'package:crafty_bay/data/models/banner_list.dart';
 
-class BannerListModel {
+class CategoryListModel {
   String? msg;
-  List<Banner>? bannerList;
+  List<BannerItem>? bannerList;
 
-  BannerListModel({this.msg, this.bannerList});
+  CategoryListModel({this.msg, this.bannerList});
 
-  BannerListModel.fromJson(Map<String, dynamic> json) {
+  CategoryListModel.fromJson(Map<String, dynamic> json) {
     msg = json['msg'];
     if (json['data'] != null) {
-      bannerList = <Banner>[];
+      bannerList = <BannerItem>[];
       json['data'].forEach((v) {
-        bannerList!.add(Banner.fromJson(v));
+        bannerList!.add(BannerItem.fromJson(v));
       });
     }
   }
+
+  get categoryList => null;
 
   Map<String, dynamic> toJson() {
     final Map<String, dynamic> data = <String, dynamic>{};
