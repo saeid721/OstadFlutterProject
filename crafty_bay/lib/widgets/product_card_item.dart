@@ -1,19 +1,21 @@
+import 'package:crafty_bay/data/models/product_model.dart';
 import 'package:crafty_bay/presentation/ui/screens/auth/product_details_screen.dart';
 import 'package:crafty_bay/presentation/ui/utility/app_colors.dart';
-import 'package:crafty_bay/presentation/ui/utility/assets_path.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
 class ProductCardItem extends StatelessWidget {
   const ProductCardItem({
-    super.key,
+    super.key, required this.product,
   });
+
+  final ProductModel product;
 
   @override
   Widget build(BuildContext context) {
     return InkWell(
       onTap: () {
-        Get.to( () => ProductDetailsScreen());
+        Get.to(() => const ProductDetailsScreen());
       },
       borderRadius: BorderRadius.circular(16),
       child: SizedBox(
@@ -31,11 +33,11 @@ class ProductCardItem extends StatelessWidget {
                   topLeft: Radius.circular(16),
                   topRight: Radius.circular(16),
                 ),
-                child: Image.asset(
-                  AssetsPath.dummyShoeImageJpg,
+                child: Image.network(
+                  product.image ?? '',
                   width: 160,
                   height: 120,
-                  fit: BoxFit.cover,
+                  fit: BoxFit.scaleDown,
                 ),
               ),
               Padding(
@@ -43,56 +45,62 @@ class ProductCardItem extends StatelessWidget {
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
-                        const Text(
-                          'Kike Shoe, 12h',
-                          maxLines: 1,
-                          style: TextStyle(
-                              fontSize: 12,
-                              color: Colors.black45,
-                              fontWeight: FontWeight.w500,
-                              overflow: TextOverflow.ellipsis),
-                        ),
+                    Text(
+                      product.title ?? '',
+                      maxLines: 1,
+                      style: const TextStyle(
+                          fontSize: 12,
+                          color: Colors.black45,
+                          fontWeight: FontWeight.w500,
+                          overflow: TextOverflow.ellipsis),
+                    ),
                     Row(
                       children: [
-                        const Text(
-                          '\$12',
-                          style: TextStyle(
+                        Text(
+                          '\$${product.price ?? 0}',
+                          style: const TextStyle(
                               fontSize: 12,
                               color: AppColors.primaryColor,
                               fontWeight: FontWeight.w600),
                         ),
-                        const SizedBox(width: 8,),
-                        const Wrap(
+                        const SizedBox(
+                          width: 8,
+                        ),
+                        Wrap(
                           crossAxisAlignment: WrapCrossAlignment.center,
                           children: [
-                            Icon(
+                            const Icon(
                               Icons.star,
                               size: 14,
                               color: Colors.amber,
                             ),
                             Text(
-                              '4.4',
-                              style: TextStyle(
+                              '${product.star ?? 0}',
+                              style: const TextStyle(
                                   fontSize: 12,
                                   fontWeight: FontWeight.w600,
                                   color: Colors.grey),
                             ),
                           ],
                         ),
-      
-                        const SizedBox(width: 8,),
-                          Card(
-                            color: AppColors.primaryColor,
-                            shape: RoundedRectangleBorder(
-                              borderRadius: BorderRadius.circular(4),
-                            ),
-                            child: const Padding(
-                              padding: EdgeInsets.all(2.0),
-                              child: Icon(Icons.favorite_outline_rounded, size: 10, color: Colors.white,),
+                        const SizedBox(
+                          width: 8,
+                        ),
+                        Card(
+                          color: AppColors.primaryColor,
+                          shape: RoundedRectangleBorder(
+                            borderRadius: BorderRadius.circular(4),
+                          ),
+                          child: const Padding(
+                            padding: EdgeInsets.all(2.0),
+                            child: Icon(
+                              Icons.favorite_outline_rounded,
+                              size: 10,
+                              color: Colors.white,
                             ),
                           ),
+                        ),
                       ],
-                      
                     ),
                   ],
                 ),

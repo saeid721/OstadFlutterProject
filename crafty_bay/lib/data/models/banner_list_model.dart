@@ -1,12 +1,12 @@
 import 'package:crafty_bay/data/models/banner_list.dart';
 
-class CategoryListModel {
+class ProductListModel {
   String? msg;
   List<BannerItem>? bannerList;
 
-  CategoryListModel({this.msg, this.bannerList});
+  ProductListModel({this.msg, this.bannerList});
 
-  CategoryListModel.fromJson(Map<String, dynamic> json) {
+  ProductListModel.fromJson(Map<String, dynamic> json) {
     msg = json['msg'];
     if (json['data'] != null) {
       bannerList = <BannerItem>[];
@@ -17,6 +17,8 @@ class CategoryListModel {
   }
 
   get categoryList => null;
+
+  get productList => null;
 
   Map<String, dynamic> toJson() {
     final Map<String, dynamic> data = <String, dynamic>{};

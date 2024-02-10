@@ -12,9 +12,9 @@ class HomeBannerController extends GetxController {
 
   String get errorMessage => _errorMessage;
 
-  CategoryListModel _bannerListModel = CategoryListModel();
+  ProductListModel _bannerListModel = ProductListModel();
 
-  CategoryListModel get bannerListModel => _bannerListModel;
+  ProductListModel get bannerListModel => _bannerListModel;
 
   Future<bool> getBannerList() async {
     _inProgress = true;
@@ -26,7 +26,7 @@ class HomeBannerController extends GetxController {
     );
     _inProgress = false;
     if (response.isSuccess) {
-      _bannerListModel = CategoryListModel.fromJson(response.responseData);
+      _bannerListModel = ProductListModel.fromJson(response.responseData);
       isSuccess = true;
     } else {
       _errorMessage = response.errorMessage;

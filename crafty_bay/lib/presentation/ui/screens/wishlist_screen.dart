@@ -12,7 +12,6 @@ class WishListScreen extends StatefulWidget {
 
 class _WishListScreenState extends State<WishListScreen> {
   @override
-
   Widget build(BuildContext context) {
     return PopScope(
       canPop: false,
@@ -44,7 +43,9 @@ class _WishListScreenState extends State<WishListScreen> {
                   mainAxisSpacing: 8,
                   crossAxisSpacing: 4),
               itemBuilder: (context, index) {
-                return const FittedBox(child: ProductCardItem());
+                return const FittedBox(
+                  //child: ProductCardItem(),
+                );
               }),
         ),
       ),

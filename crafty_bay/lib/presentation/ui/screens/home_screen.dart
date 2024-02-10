@@ -2,6 +2,7 @@ import 'package:crafty_bay/presentation/state_holders/auth_controller.dart';
 import 'package:crafty_bay/presentation/state_holders/category_controller.dart';
 import 'package:crafty_bay/presentation/state_holders/home_banner_controller.dart';
 import 'package:crafty_bay/presentation/state_holders/main_bottom_nav_controller.dart';
+import 'package:crafty_bay/presentation/state_holders/popular_product_controller.dart';
 import 'package:crafty_bay/presentation/ui/screens/auth/product_list_screen.dart';
 import 'package:crafty_bay/presentation/ui/screens/auth/verify_email_screen.dart';
 import 'package:crafty_bay/presentation/ui/utility/assets_path.dart';
@@ -64,7 +65,7 @@ class _HomeScreenState extends State<HomeScreen> {
                   Get.to(const ProductListScreen());
                 },
               ),
-              productList,
+              populerProductList,
               const SizedBox(height: 8),
               SectionTitle(
                 title: 'Special',
@@ -80,26 +81,6 @@ class _HomeScreenState extends State<HomeScreen> {
             ],
           ),
         ),
-      ),
-    );
-  }
-
-  SizedBox get productList {
-    return SizedBox(
-      height: 190,
-      child: ListView.separated(
-        itemCount: 10,
-        primary: false,
-        shrinkWrap: true,
-        scrollDirection: Axis.horizontal,
-        itemBuilder: (context, index) {
-          return const ProductCardItem();
-        },
-        separatorBuilder: (_, __) {
-          return const SizedBox(
-            width: 8,
-          );
-        },
       ),
     );
   }
@@ -131,6 +112,58 @@ class _HomeScreenState extends State<HomeScreen> {
           ),
         );
       }),
+    );
+  }
+
+  SizedBox get populerProductList {
+    return SizedBox(
+      height: 190,
+      child: GetBuilder<PopularProductController>(
+          builder: (popularProductController) {
+        return Visibility(
+          visible: popularProductController.inProgress == false,
+          replacement: const CenterCircularProgressIndicator(),
+          child: ListView.separated(
+            itemCount:
+                popularProductController.productListModel.productList?.length ??
+                    0,
+            primary: false,
+            shrinkWrap: true,
+            scrollDirection: Axis.horizontal,
+            itemBuilder: (context, index) {
+              return ProductCardItem(
+                product: popularProductController
+                    .productListModel.productList![index],
+              );
+            },
+            separatorBuilder: (_, __) {
+              return const SizedBox(
+                width: 8,
+              );
+            },
+          ),
+        );
+      }),
+    );
+  }
+
+  SizedBox get productList {
+    return SizedBox(
+      height: 190,
+      child: ListView.separated(
+        itemCount: 10,
+        primary: false,
+        shrinkWrap: true,
+        scrollDirection: Axis.horizontal,
+        itemBuilder: (context, index) {
+          // return const ProductCardItem();
+        },
+        separatorBuilder: (_, __) {
+          return const SizedBox(
+            width: 8,
+          );
+        },
+      ),
     );
   }
 

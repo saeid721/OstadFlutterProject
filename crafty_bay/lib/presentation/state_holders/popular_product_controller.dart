@@ -3,7 +3,7 @@ import 'package:crafty_bay/data/services/newtork_coller.dart';
 import 'package:crafty_bay/data/utility/urls.dart';
 import 'package:get/get.dart';
 
-class CategoryController extends GetxController {
+class PopularProductController extends GetxController {
   bool _inProgress = false;
 
   bool get inProgress => _inProgress;
@@ -12,21 +12,21 @@ class CategoryController extends GetxController {
 
   String get errorMessage => _errorMessage;
 
-  ProductListModel _categoryListModel = ProductListModel();
+  ProductListModel _productListModel = ProductListModel();
 
-  ProductListModel get categoryListModel => _categoryListModel;
+  ProductListModel get productListModel => _productListModel;
 
-  Future<bool> getCategoryList() async {
+  Future<bool> getPopulerProductList() async {
     _inProgress = true;
     bool isSuccess = false;
     update();
 
     final response = await NetworkCaller().getRequest(
-      Urls.categoryList,
+      Urls.popularProduct,
     );
     _inProgress = false;
     if (response.isSuccess) {
-      _categoryListModel = ProductListModel.fromJson(response.responseData);
+      _productListModel = ProductListModel.fromJson(response.responseData);
       isSuccess = true;
     } else {
       _errorMessage = response.errorMessage;

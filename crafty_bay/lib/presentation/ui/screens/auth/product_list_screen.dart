@@ -25,8 +25,10 @@ class _ProductListScreenState extends State<ProductListScreen> {
               childAspectRatio: 0.90,
               mainAxisSpacing: 8,
               crossAxisSpacing: 4),
-              itemBuilder: (context, index) {
-            return const FittedBox(child: ProductCardItem());
+          itemBuilder: (context, index) {
+            return const FittedBox(
+              //child: ProductCardItem(),
+            );
           },
         ),
       ),
